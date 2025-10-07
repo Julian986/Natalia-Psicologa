@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Calendar, Shield, Award } from 'lucide-react';
+import { Video, BookOpen, Award, Star } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
 
                 <div className="space-y-4">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                    <span className="block text-slate-900">Lic. Natalia</span>
+                    <span className="block text-slate-900">Lic. Natalia Domecq</span>
                   </h1>
                   
                   <p className="text-lg md:text-xl lg:text-2xl text-slate-600 font-light leading-relaxed">
@@ -106,26 +106,26 @@ const Hero: React.FC = () => {
                     <span className="text-sm font-medium">Psicóloga Clínica</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-600">
-                    <Calendar className="w-5 h-5 text-slate-800" />
+                    <Video className="w-5 h-5 text-slate-800" />
                     <span className="text-sm font-medium">Virtual y Presencial</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-600">
-                    <Shield className="w-5 h-5 text-slate-800" />
+                    <Star className="w-5 h-5 text-slate-800" />
                     <span className="text-sm font-medium">10+ Años Experiencia</span>
                   </div>
                 </div>
 
                 {/* CTA */}
-                <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <button className="group px-8 py-4 bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-slate-950 rounded-xl font-semibold text-white shadow-lg shadow-slate-900/20 hover:shadow-xl hover:shadow-slate-900/30 transition-all duration-300 transform hover:-translate-y-1">
-                    <span className="flex items-center gap-2 text-base">
-                      <Shield className="w-4 h-4" />
+                <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                  <button className="group px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-slate-950 rounded-xl font-semibold text-white shadow-lg shadow-slate-900/20 hover:shadow-xl hover:shadow-slate-900/30 transition-all duration-300 transform hover:-translate-y-1">
+                    <span className="flex items-center justify-center gap-2 text-sm sm:text-base">
+                      <BookOpen className="w-4 h-4" />
                       Explorar Contenido
                       <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
                     </span>
                   </button>
-                  <button className="group px-8 py-4 bg-white hover:bg-slate-50 border-2 border-slate-300 hover:border-slate-400 rounded-xl font-semibold text-slate-700 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                    <span className="flex items-center gap-2 text-base">
+                  <button className="group px-6 py-3 sm:px-8 sm:py-4 bg-white hover:bg-slate-50 border-2 border-slate-300 hover:border-slate-400 rounded-xl font-semibold text-slate-700 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <span className="flex items-center justify-center gap-2 text-sm sm:text-base">
                       <Award className="w-4 h-4" />
                       Ver Experiencia
                       <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>

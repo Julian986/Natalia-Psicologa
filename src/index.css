@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+/* Bloquear scroll cuando el menú móvil está abierto */
+body.menu-open {
+  overflow: hidden;
+}
