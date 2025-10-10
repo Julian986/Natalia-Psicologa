@@ -1,4 +1,5 @@
 import './App.css';
+import { Analytics } from '@vercel/analytics/react';
 import TopBar from './components/layout/TopBar';
 import Header from './components/layout/Header';
 import Sidebar from './components/layout/Sidebar';
@@ -60,6 +61,9 @@ function App() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   );
 }
