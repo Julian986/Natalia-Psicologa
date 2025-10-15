@@ -13,6 +13,17 @@ const Sidebar: React.FC = () => {
     }
   };
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <aside className="sidebar">
       {/* Main Navigation */}
@@ -29,7 +40,7 @@ const Sidebar: React.FC = () => {
         
         <ul className="main-navigation">
           <li className="menu-item current-menu-item">
-            <a href="#inicio">
+            <a href="#inicio" onClick={(e) => handleSmoothScroll(e, 'inicio')}>
               <span>Home</span>
               <RiArrowRightSFill className="menu-icon" size={18} />
             </a>
@@ -39,7 +50,7 @@ const Sidebar: React.FC = () => {
             <a 
               href="#servicios"
               onClick={(e) => {
-                e.preventDefault();
+                handleSmoothScroll(e, 'servicios');
                 toggleSubmenu('servicios');
               }}
             >
@@ -99,14 +110,14 @@ const Sidebar: React.FC = () => {
           </li>
 
           <li className="menu-item">
-            <a href="#sobre-mi">
+            <a href="#sobre-mi" onClick={(e) => handleSmoothScroll(e, 'sobre-mi')}>
               <span>Sobre Mí</span>
               <RiArrowRightSFill className="menu-icon" size={18} />
             </a>
           </li>
 
           <li className="menu-item">
-            <a href="#blog">
+            <a href="#blog" onClick={(e) => handleSmoothScroll(e, 'blog')}>
               <span>Blog</span>
               <RiArrowRightSFill className="menu-icon" size={18} />
             </a>
@@ -114,9 +125,9 @@ const Sidebar: React.FC = () => {
 
           <li className={`menu-item menu-item-has-children ${openSubmenu === 'paginas' ? 'open' : ''}`}>
             <a 
-              href="#paginas"
+              href="#faq"
               onClick={(e) => {
-                e.preventDefault();
+                handleSmoothScroll(e, 'faq');
                 toggleSubmenu('paginas');
               }}
             >
@@ -146,7 +157,7 @@ const Sidebar: React.FC = () => {
           </li>
 
           <li className="menu-item">
-            <a href="#contacto">
+            <a href="#contacto" onClick={(e) => handleSmoothScroll(e, 'contacto')}>
               <span>Contacto</span>
               <RiArrowRightSFill className="menu-icon" size={18} />
             </a>

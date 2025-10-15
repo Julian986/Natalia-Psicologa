@@ -36,25 +36,35 @@ function App() {
           {/* Main Content - 9 columns (75%) */}
           <main className="lg:col-span-9 order-1 lg:order-2">
             {/* Hero Slider */}
-            <HeroSlider />
+            <section id="inicio">
+              <HeroSlider />
+            </section>
 
             {/* Welcome Section */}
-            <WelcomeSection />
+            <section id="sobre-mi">
+              <WelcomeSection />
+            </section>
 
             {/* Banner CTA */}
             <BannerCTA />
 
             {/* Services Grid */}
-            <ServicesGrid />
+            <section id="servicios">
+              <ServicesGrid />
+            </section>
 
             {/* Testimonials */}
             <Testimonials />
 
             {/* FAQ */}
-            <FAQ />
+            <section id="faq">
+              <FAQ />
+            </section>
 
             {/* Latest Posts */}
-            <LatestPosts />
+            <section id="blog">
+              <LatestPosts />
+            </section>
           </main>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { CreditCard } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id="contacto">
       {/* Footer Top */}
       <div className="footer-top">
         <div className="container-custom">
