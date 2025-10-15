@@ -22,8 +22,8 @@ const FAQ: React.FC = () => {
   return (
     <div className="mb-10">
       {/* Title */}
-      <div className="text-center mb-8">
-        <h3 className="widget-title">Preguntas Frecuentes</h3>
+      <div className="text-center mb-12">
+        <h3 className="text-3xl font-bold text-[#2c3e50]">Preguntas Frecuentes</h3>
       </div>
 
       {/* FAQ Grid */}

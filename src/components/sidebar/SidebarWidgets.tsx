@@ -1,18 +1,19 @@
 import React from 'react';
-import { MessageCircle, FileText, Award } from 'lucide-react';
+import { FileText, Award } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const SidebarWidgets: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* WhatsApp/Skype Widget */}
-      <div className="widget widget-skype">
+      <div className="widget widget-skype" style={{ padding: '0' }}>
         <a
           href="https://wa.me/5492911234567"
           target="_blank"
           rel="noopener noreferrer"
-          className="skype-button bg-[#00aff0] hover:bg-[#0099d6]"
+          className="skype-button"
         >
-          <MessageCircle className="w-8 h-8" />
+          <FaWhatsapp className="w-6 h-6" />
           <p className="skype-button__title">Consulta por WhatsApp</p>
         </a>
       </div>
@@ -27,14 +28,14 @@ const SidebarWidgets: React.FC = () => {
         <div className="space-y-2">
           <a
             href="#consentimiento"
-            className="btn btn-default fullwidth flex items-center justify-center gap-2 w-full bg-gray-50 hover:bg-gray-100 border border-gray-300 text-gray-700 py-3 px-4 rounded transition-colors text-sm font-semibold"
+            className="btn btn-default fullwidth flex items-center justify-start gap-2 w-full bg-gray-50 hover:bg-gray-100 border border-gray-300 text-gray-700 py-3 px-4 rounded transition-colors text-sm font-semibold"
           >
             <FileText className="w-4 h-4" />
             Consentimiento Informado
           </a>
           <a
             href="#historia"
-            className="btn btn-default fullwidth flex items-center justify-center gap-2 w-full bg-gray-50 hover:bg-gray-100 border border-gray-300 text-gray-700 py-3 px-4 rounded transition-colors text-sm font-semibold"
+            className="btn btn-default fullwidth flex items-center justify-start gap-2 w-full bg-gray-50 hover:bg-gray-100 border border-gray-300 text-gray-700 py-3 px-4 rounded transition-colors text-sm font-semibold"
           >
             <FileText className="w-4 h-4" />
             Historia Clínica

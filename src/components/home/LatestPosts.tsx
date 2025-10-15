@@ -26,29 +26,36 @@ const LatestPosts: React.FC = () => {
   ];
 
   return (
-    <div className="mb-10">
+    <div className="mb-10 mt-20 pt-16 border-t-2 border-gray-200">
       <div className="grid md:grid-cols-3 gap-6">
         {posts.map((post, index) => (
           <article key={index} className="latest-post">
             {/* Thumbnail */}
-            <a href={post.link} className="latest-post__thumbnail">
+            <a href={post.link} className="latest-post__thumbnail relative block">
               <div className="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded flex items-center justify-center overflow-hidden group">
                 <div className="w-full h-full bg-[#1FA7DA]/10 flex items-center justify-center">
                   <span className="text-gray-400 font-medium">Imagen</span>
                 </div>
               </div>
+              
+              {/* Categories */}
+              <div className="absolute top-3 left-3">
+                <ul className="post-categories">
+                  <li>
+                    <a 
+                      href={`#category-${post.category.toLowerCase()}`} 
+                      className="bg-[#1FA7DA] hover:bg-[#178bb8] shadow-lg"
+                      style={{ 
+                        textShadow: '0 1px 3px rgba(0,0,0,0.3)',
+                        fontWeight: '700'
+                      }}
+                    >
+                      {post.category}
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </a>
-
-            {/* Categories */}
-            <div className="latest-post__categories">
-              <ul className="post-categories">
-                <li>
-                  <a href={`#category-${post.category.toLowerCase()}`} className="bg-[#1FA7DA] hover:bg-[#178bb8]">
-                    {post.category}
-                  </a>
-                </li>
-              </ul>
-            </div>
 
             {/* Title */}
             <h4 className="latest-post__title">

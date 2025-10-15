@@ -3,6 +3,10 @@ La plantilla que nos paso ella: https://elements.envato.com/es/psychology-counse
 
 Tasks
 - Mejorar el menu mobile
+- El item de navegacion
+
+- Flechas ??
+- Contenido del carrousel ?
 
 
 

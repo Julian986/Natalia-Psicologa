@@ -28,7 +28,7 @@ const ServicesGrid: React.FC = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="page-box page-box--block bg-white border border-gray-200 rounded overflow-hidden hover:shadow-lg transition-shadow"
+            className="page-box page-box--block bg-white border border-gray-200 rounded overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
           >
             {/* Image */}
             <a href={service.link} className="page-box__picture block">

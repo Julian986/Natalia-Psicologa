@@ -70,21 +70,25 @@ const HeroSlider: React.FC = () => {
       ))}
 
       {/* Navigation Controls */}
-      <button
-        onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/20 hover:bg-black/30 backdrop-blur-sm flex items-center justify-center transition-all"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-6 h-6 text-white" />
-      </button>
-      
-      <button
-        onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/20 hover:bg-black/30 backdrop-blur-sm flex items-center justify-center transition-all"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-6 h-6 text-white" />
-      </button>
+      <div className="absolute bottom-8 left-8 flex gap-2 z-10">
+        <button
+          onClick={goToPrevious}
+          className="w-12 h-12 rounded-sm flex items-center justify-center transition-all shadow-md hover:shadow-lg hover:scale-105 group cursor-pointer"
+          style={{ backgroundColor: 'rgb(250 250 250 / 65%)' }}
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-5 h-5 text-[#676b6f] group-hover:text-[#1FA7DA] transition-colors" strokeWidth={2.5} />
+        </button>
+        
+        <button
+          onClick={goToNext}
+          className="w-12 h-12 rounded-sm flex items-center justify-center transition-all shadow-md hover:shadow-lg hover:scale-105 group cursor-pointer"
+          style={{ backgroundColor: 'rgb(250 250 250 / 65%)' }}
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-5 h-5 text-[#676b6f] group-hover:text-[#1FA7DA] transition-colors" strokeWidth={2.5} />
+        </button>
+      </div>
     </div>
   );
 };

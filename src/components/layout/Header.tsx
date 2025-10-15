@@ -20,7 +20,7 @@ const Header: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8">
             {/* Icon Box - Dirección */}
             <div className="icon-box text-left">
-              <MapPin className="w-10 h-10 text-[#1FA7DA] flex-shrink-0" />
+              <MapPin className="w-10 h-10 text-[#dddddd] flex-shrink-0" />
               <div className="icon-box__text">
                 <h4 className="icon-box__title">Bahía Blanca</h4>
                 <span className="icon-box__subtitle">Buenos Aires, Argentina</span>
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
 
             {/* Icon Box - Horario */}
             <div className="icon-box text-left">
-              <Clock className="w-10 h-10 text-[#1FA7DA] flex-shrink-0" />
+              <Clock className="w-10 h-10 text-[#dddddd] flex-shrink-0" />
               <div className="icon-box__text">
                 <h4 className="icon-box__title">Lun - Vie 9.00 - 18.00</h4>
                 <span className="icon-box__subtitle">Sábados con turno</span>

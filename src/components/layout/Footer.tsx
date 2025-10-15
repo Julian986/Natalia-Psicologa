@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Navigation */}
-            <div>
+            <div className="md:pl-12">
               <h6 className="footer-top__headings">Navegación</h6>
               <ul className="space-y-2">
                 <li>

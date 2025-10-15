@@ -60,7 +60,7 @@ html {
 .btn-primary {
   background-color: var(--button-color);
   color: white;
-  padding: 12px 24px;
+  padding: 8px 24px;
   border-radius: 4px;
   font-weight: 600;
   font-size: 14px;
@@ -260,9 +260,9 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 20px;
-  background-color: #00aff0;
+  gap: 10px;
+  padding: 8px 16px;
+  background-color: #25D366;
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -270,12 +270,12 @@ html {
 }
 
 .skype-button:hover {
-  background-color: #0099d6;
+  background-color: #128C7E;
   transform: translateY(-2px);
 }
 
 .skype-button__title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   margin: 0;
 }
@@ -318,15 +318,35 @@ html {
   margin-bottom: 30px;
 }
 
+.main-navigation__title-wrapper {
+  padding: 20px 15px 16px;
+}
+
 .main-navigation__title {
-  background-color: #f5f5f5;
-  padding: 15px 20px;
-  font-size: 12px;
-  font-weight: 700;
+  background: #fafafa;
+  color: #555;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 12px 16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #666;
-  border-bottom: 1px solid var(--border-color);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.main-navigation__title::placeholder {
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.main-navigation__title:focus {
+  background: white;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(31, 167, 218, 0.1);
 }
 
 .main-navigation {
@@ -344,7 +364,9 @@ html {
 }
 
 .main-navigation .menu-item > a {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 15px 20px;
   color: var(--text-color);
   text-decoration: none;
@@ -352,6 +374,13 @@ html {
   font-size: 14px;
   transition: all 0.3s ease;
   border-left: 3px solid transparent;
+  position: relative;
+}
+
+.main-navigation .menu-item > a .menu-icon {
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .main-navigation .menu-item > a:hover,
@@ -362,6 +391,12 @@ html {
   padding-left: 23px;
 }
 
+.main-navigation .menu-item > a:hover .menu-icon,
+.main-navigation .current-menu-item > a .menu-icon {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
 .main-navigation .sub-menu {
   list-style: none;
   padding: 0;
@@ -370,20 +405,34 @@ html {
   display: none;
 }
 
-.main-navigation .menu-item-has-children:hover .sub-menu {
+.main-navigation .menu-item-has-children.open .sub-menu {
   display: block;
 }
 
 .main-navigation .sub-menu .menu-item a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 12px 20px 12px 40px;
   font-size: 13px;
   font-weight: 500;
   color: #666;
 }
 
+.main-navigation .sub-menu .menu-item a .menu-icon {
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 .main-navigation .sub-menu .menu-item a:hover {
   color: var(--primary-color);
   background-color: #f5f5f5;
+}
+
+.main-navigation .sub-menu .menu-item a:hover .menu-icon {
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 /* Jumbotron / Hero Slider */
