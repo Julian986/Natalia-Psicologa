@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RiArrowRightSFill, RiArrowDownSFill } from 'react-icons/ri';
+import { X } from 'lucide-react';
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const [searchValue, setSearchValue] = useState<string>('');
 
@@ -15,19 +21,103 @@ const Sidebar: React.FC = () => {
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
+    
+    // Special case for Contacto - scroll to bottom
+    if (targetId === 'contacto') {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });
+      onClose();
+      return;
+    }
+    
+    // Special case for Inicio - scroll to top
+    if (targetId === 'inicio') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      onClose();
+      return;
+    }
+    
     const element = document.getElementById(targetId);
     if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+      // Get element position and add offset based on section
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      let offset = 100; // Default offset
+      
+      // Customize offset per section (increased to account for fixed header)
+      switch (targetId) {
+        case 'sobre-mi':
+          offset = 210; // Un poco más arriba
+          break;
+        case 'servicios':
+          offset = 120; // Un poco más arriba
+          break;
+        case 'blog':
+          offset = 80; // Un poco más abajo
+          break;
+        case 'faq':
+          offset = 130; // Perfecto como está
+          break;
+        default:
+          offset = 130;
+      }
+      
+      const offsetPosition = elementPosition - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
       });
+      
+      // Close mobile menu after navigation
+      onClose();
     }
   };
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+    return () => {
+      document.body.classList.remove('menu-open');
+    };
+  }, [isOpen]);
+
   return (
-    <aside className="sidebar">
+    <>
+      {/* Mobile Overlay */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={onClose}
+        />
+      )}
+      
+      {/* Sidebar */}
+      <aside className={`sidebar fixed lg:static top-0 left-0 h-full lg:h-auto w-[280px] lg:w-auto bg-[#F2F4F7] lg:bg-transparent overflow-y-auto lg:overflow-visible z-50 transition-transform duration-300 ${
+        isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+      }`}>
       {/* Main Navigation */}
       <nav className="main-navigation__container sticky top-4">
+        {/* Mobile Close Button */}
+        <div className="lg:hidden flex items-center justify-between p-4 border-b border-gray-200">
+          <span className="font-bold text-[#2c3e50]">Menú</span>
+          <button
+            onClick={onClose}
+            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded transition-colors"
+            aria-label="Close menu"
+          >
+            <X className="w-5 h-5 text-gray-600" />
+          </button>
+        </div>
+        
         <div className="main-navigation__title-wrapper">
           <input 
             type="text"
@@ -41,66 +131,67 @@ const Sidebar: React.FC = () => {
         <ul className="main-navigation">
           <li className="menu-item current-menu-item">
             <a href="#inicio" onClick={(e) => handleSmoothScroll(e, 'inicio')}>
-              <span>Home</span>
+              <span>Inicio</span>
+              <RiArrowRightSFill className="menu-icon" size={18} />
+            </a>
+          </li>
+
+          <li className="menu-item">
+            <a href="#sobre-mi" onClick={(e) => handleSmoothScroll(e, 'sobre-mi')}>
+              <span>Sobre Mí</span>
               <RiArrowRightSFill className="menu-icon" size={18} />
             </a>
           </li>
           
-          <li className={`menu-item menu-item-has-children ${openSubmenu === 'servicios' ? 'open' : ''}`}>
+          <li className={`menu-item menu-item-has-children ${openSubmenu === 'acompanamiento' ? 'open' : ''}`}>
             <a 
               href="#servicios"
               onClick={(e) => {
-                handleSmoothScroll(e, 'servicios');
-                toggleSubmenu('servicios');
+                e.preventDefault();
+                toggleSubmenu('acompanamiento');
               }}
             >
-              <span>Servicios</span>
-              {openSubmenu === 'servicios' ? (
+              <span>Acompañamiento</span>
+              {openSubmenu === 'acompanamiento' ? (
                 <RiArrowDownSFill className="menu-icon" size={18} />
               ) : (
                 <RiArrowRightSFill className="menu-icon" size={18} />
               )}
             </a>
-            {openSubmenu === 'servicios' && (
+            {openSubmenu === 'acompanamiento' && (
               <ul className="sub-menu">
                 <li className="menu-item">
-                  <a href="#servicios-lista">
-                    <span>Lista de Servicios</span>
-                    <RiArrowRightSFill className="menu-icon" size={16} />
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="#terapia-pareja">
+                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
                     <span>Terapia de Pareja</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a href="#depresion">
+                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
                     <span>Tratamiento de Depresión</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a href="#terapia-individual">
+                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
                     <span>Tratamiento Individual</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a href="#terapia-ninos">
+                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
                     <span>Terapia para Niños</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a href="#ansiedad">
+                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
                     <span>Tratamiento de Ansiedad</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a href="#post-divorcio">
+                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
                     <span>Recuperación Post-Divorcio</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
@@ -110,50 +201,17 @@ const Sidebar: React.FC = () => {
           </li>
 
           <li className="menu-item">
-            <a href="#sobre-mi" onClick={(e) => handleSmoothScroll(e, 'sobre-mi')}>
-              <span>Sobre Mí</span>
-              <RiArrowRightSFill className="menu-icon" size={18} />
-            </a>
-          </li>
-
-          <li className="menu-item">
             <a href="#blog" onClick={(e) => handleSmoothScroll(e, 'blog')}>
               <span>Blog</span>
               <RiArrowRightSFill className="menu-icon" size={18} />
             </a>
           </li>
 
-          <li className={`menu-item menu-item-has-children ${openSubmenu === 'paginas' ? 'open' : ''}`}>
-            <a 
-              href="#faq"
-              onClick={(e) => {
-                handleSmoothScroll(e, 'faq');
-                toggleSubmenu('paginas');
-              }}
-            >
-              <span>Páginas</span>
-              {openSubmenu === 'paginas' ? (
-                <RiArrowDownSFill className="menu-icon" size={18} />
-              ) : (
-                <RiArrowRightSFill className="menu-icon" size={18} />
-              )}
+          <li className="menu-item">
+            <a href="#faq" onClick={(e) => handleSmoothScroll(e, 'faq')}>
+              <span>Preguntas Frecuentes</span>
+              <RiArrowRightSFill className="menu-icon" size={18} />
             </a>
-            {openSubmenu === 'paginas' && (
-              <ul className="sub-menu">
-                <li className="menu-item">
-                  <a href="#recursos">
-                    <span>Recursos</span>
-                    <RiArrowRightSFill className="menu-icon" size={16} />
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="#faq">
-                    <span>Preguntas Frecuentes</span>
-                    <RiArrowRightSFill className="menu-icon" size={16} />
-                  </a>
-                </li>
-              </ul>
-            )}
           </li>
 
           <li className="menu-item">
@@ -175,8 +233,10 @@ const Sidebar: React.FC = () => {
           </a>
         </div>
       </nav>
-    </aside>
+      </aside>
+    </>
   );
 };
 
 export default Sidebar;
+

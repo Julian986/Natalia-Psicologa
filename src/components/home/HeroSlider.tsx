@@ -42,7 +42,7 @@ const HeroSlider: React.FC = () => {
   };
 
   return (
-    <div className="jumbotron relative w-full h-[400px] bg-gradient-to-r from-[#1FA7DA] to-[#178bb8] mb-8">
+    <div className="jumbotron relative w-full h-[280px] md:h-[350px] lg:h-[400px] bg-gradient-to-r from-[#1FA7DA] to-[#178bb8] mb-6">
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/30"></div>
       
@@ -58,11 +58,11 @@ const HeroSlider: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#1FA7DA] to-[#178bb8]"></div>
           
           {/* Content */}
-          <div className="jumbotron-content">
-            <h1 className="jumbotron-content__title">
+          <div className="jumbotron-content px-4 md:px-6">
+            <h1 className="jumbotron-content__title text-2xl sm:text-3xl md:text-4xl lg:text-[42px]">
               {slide.quote}
             </h1>
-            <div className="jumbotron-content__description">
+            <div className="jumbotron-content__description text-base sm:text-lg md:text-xl lg:text-2xl">
               <p><i>–</i> {slide.author}</p>
             </div>
           </div>
@@ -70,23 +70,23 @@ const HeroSlider: React.FC = () => {
       ))}
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-8 left-8 flex gap-2 z-10">
+      <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 flex gap-2 z-10">
         <button
           onClick={goToPrevious}
-          className="w-12 h-12 rounded-sm flex items-center justify-center transition-all shadow-md hover:shadow-lg hover:scale-105 group cursor-pointer"
+          className="w-10 h-10 md:w-12 md:h-12 rounded-sm flex items-center justify-center transition-all shadow-md hover:shadow-lg hover:scale-105 group cursor-pointer"
           style={{ backgroundColor: 'rgb(250 250 250 / 65%)' }}
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-5 h-5 text-[#676b6f] group-hover:text-[#1FA7DA] transition-colors" strokeWidth={2.5} />
+          <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-[#676b6f] group-hover:text-[#1FA7DA] transition-colors" strokeWidth={2.5} />
         </button>
         
         <button
           onClick={goToNext}
-          className="w-12 h-12 rounded-sm flex items-center justify-center transition-all shadow-md hover:shadow-lg hover:scale-105 group cursor-pointer"
+          className="w-10 h-10 md:w-12 md:h-12 rounded-sm flex items-center justify-center transition-all shadow-md hover:shadow-lg hover:scale-105 group cursor-pointer"
           style={{ backgroundColor: 'rgb(250 250 250 / 65%)' }}
           aria-label="Next slide"
         >
-          <ChevronRight className="w-5 h-5 text-[#676b6f] group-hover:text-[#1FA7DA] transition-colors" strokeWidth={2.5} />
+          <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-[#676b6f] group-hover:text-[#1FA7DA] transition-colors" strokeWidth={2.5} />
         </button>
       </div>
     </div>

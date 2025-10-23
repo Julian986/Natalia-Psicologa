@@ -2,21 +2,20 @@ import React from 'react';
 
 const WelcomeSection: React.FC = () => {
   return (
-    <div className="grid md:grid-cols-2 gap-8 mb-10">
+    <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-10 mt-6 md:mt-0">
       {/* Welcome Text */}
       <div>
-        <h3 className="widget-title">Bienvenida a mi Consultorio</h3>
-        <div className="text-gray-700 leading-relaxed space-y-4">
-          <p>
-            Como psicóloga y terapeuta cognitivo-conductual, he trabajado con 
+        <div className="text-gray-700 leading-relaxed space-y-3 md:space-y-4">
+          <p className="text-sm md:text-base">
+            Como psicóloga clínica, he trabajado con 
             cientos de pacientes y comprendo las complejidades de los diversos 
-            problemas psicológicos que enfrentan las personas.
+            problemas psicológicos que enfrentan las personas de todas las edades.
           </p>
-          <p>
-            Mi trabajo gira en torno a ser amigable, disciplinada y organizada, 
-            pero siempre flexible. Me acerco a mis pacientes y les ayudo a 
-            resolver sus problemas emocionales del pasado y el presente, para 
-            abrir la puerta a un futuro más brillante y seguro.
+          <p className="text-sm md:text-base">
+            Mi objetivo es compartir una perspectiva profesional sobre la salud mental,
+            ofreciendo información confiable en un mundo donde circula mucha información
+            sin fundamento. Aquí encontrarás contenido basado en mi experiencia y 
+            formación profesional.
           </p>
           <p>
             <a href="#sobre-mi" className="read-more">Leer más</a>
