@@ -27,6 +27,9 @@ const LatestPosts: React.FC = () => {
 
   return (
     <div className="mb-10 mt-20 pt-16 border-t-2 border-gray-200">
+      {/* Title */}
+      <h3 className="widget-title mb-6">Lecturas Recomendadas</h3>
+      
       <div className="grid md:grid-cols-3 gap-6">
         {posts.map((post, index) => (
           <article key={index} className="latest-post">

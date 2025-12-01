@@ -28,9 +28,11 @@ const WelcomeSection: React.FC = () => {
         {/* Depression Treatment */}
         <div className="page-box page-box--inline flex gap-4 items-start">
           <a href="#depresion" className="page-box__picture flex-shrink-0">
-            <div className="w-[100px] h-[70px] bg-gradient-to-br from-gray-200 to-gray-300 rounded flex items-center justify-center text-xs text-gray-500">
-              Imagen
-            </div>
+            <img 
+              src="https://res.cloudinary.com/dzoupwn0e/image/upload/v1764600214/666c21cdb64eb0fa8351db24_656dd2466a81a396ac6b56bf_646352042a42dfa5c9d2992b_como-sali-depresion-portada_1_kww64j.webp" 
+              alt="Tratamiento de Depresión" 
+              className="w-[100px] h-[70px] object-cover rounded"
+            />
           </a>
           <div className="page-box__content flex-1">
               <h5 className="page-box__title text-[#2c3e50] mb-2">
@@ -47,9 +49,11 @@ const WelcomeSection: React.FC = () => {
         {/* Individual Treatment */}
         <div className="page-box page-box--inline flex gap-4 items-start">
           <a href="#individual" className="page-box__picture flex-shrink-0">
-            <div className="w-[100px] h-[70px] bg-gradient-to-br from-gray-200 to-gray-300 rounded flex items-center justify-center text-xs text-gray-500">
-              Imagen
-            </div>
+            <img 
+              src="https://res.cloudinary.com/dzoupwn0e/image/upload/v1764600214/c5775642d024d6b57cef2d07fa40227b_gl20qc.webp" 
+              alt="Tratamiento Individual" 
+              className="w-[100px] h-[70px] object-cover rounded"
+            />
           </a>
           <div className="page-box__content flex-1">
               <h5 className="page-box__title text-[#2c3e50] mb-2">
@@ -66,9 +70,11 @@ const WelcomeSection: React.FC = () => {
         {/* Anxiety Treatment */}
         <div className="page-box page-box--inline flex gap-4 items-start">
           <a href="#ansiedad" className="page-box__picture flex-shrink-0">
-            <div className="w-[100px] h-[70px] bg-gradient-to-br from-gray-200 to-gray-300 rounded flex items-center justify-center text-xs text-gray-500">
-              Imagen
-            </div>
+            <img 
+              src="https://res.cloudinary.com/dzoupwn0e/image/upload/v1764600224/Tratamiento-Ansiedad-Valencia_700x387_qv8go4.webp" 
+              alt="Tratamiento de Ansiedad" 
+              className="w-[100px] h-[70px] object-cover rounded"
+            />
           </a>
           <div className="page-box__content flex-1">
               <h5 className="page-box__title text-[#2c3e50] mb-2">
