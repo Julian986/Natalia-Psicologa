@@ -10,11 +10,12 @@ import WelcomeSection from './components/home/WelcomeSection';
 import ChildrenAdolescents from './components/home/ChildrenAdolescents';
 import BannerCTA from './components/home/BannerCTA';
 import ServicesGrid from './components/home/ServicesGrid';
-import Testimonials from './components/home/Testimonials';
 import FAQ from './components/home/FAQ';
 import LatestPosts from './components/home/LatestPosts';
 import SidebarAbout from './components/sidebar/SidebarAbout';
 import SidebarWidgets from './components/sidebar/SidebarWidgets';
+import WhatsAppFloating from './components/common/WhatsAppFloating';
+import Reflections from './components/home/Reflections';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -71,8 +72,8 @@ function App() {
               <ServicesGrid />
             </section>
 
-            {/* Testimonials */}
-            <Testimonials />
+            {/* Reflections Section */}
+            <Reflections />
 
             {/* FAQ */}
             <section id="faq">
@@ -86,6 +87,9 @@ function App() {
           </main>
         </div>
       </div>
+
+      {/* WhatsApp Floating Button */}
+      <WhatsAppFloating />
 
       {/* Footer */}
       <Footer />

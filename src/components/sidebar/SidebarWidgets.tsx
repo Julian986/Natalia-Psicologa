@@ -8,7 +8,7 @@ const SidebarWidgets: React.FC = () => {
       {/* WhatsApp/Skype Widget */}
       <div className="widget widget-skype" style={{ padding: '0' }}>
         <a
-          href="https://wa.me/5492911234567"
+          href="https://wa.me/5492916433000?text=Hola%20Natalia%2C%20tengo%20una%20consulta"
           target="_blank"
           rel="noopener noreferrer"
           className="skype-button"

@@ -207,6 +207,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </a>
           </li>
 
+          
+
           <li className="menu-item">
             <a href="#faq" onClick={(e) => handleSmoothScroll(e, 'faq')}>
               <span>Preguntas Frecuentes</span>
@@ -224,7 +226,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
         <div className="p-4 border-t border-gray-200">
           <a
-            href="https://wa.me/5492911234567"
+            href="https://wa.me/5492916433000?text=Hola%20Natalia%2C%20tengo%20una%20consulta"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary block w-full text-center"

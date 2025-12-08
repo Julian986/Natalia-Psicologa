@@ -33,6 +33,9 @@ const Footer: React.FC = () => {
         case 'sobre-mi':
           offset = 210; // Un poco más arriba
           break;
+        case 'modalidades':
+          offset = 130; // Similar a servicios
+          break;
         case 'servicios':
           offset = 120; // Un poco más arriba
           break;
@@ -93,6 +96,11 @@ const Footer: React.FC = () => {
                   </a>
                 </li>
                 <li>
+                  <a href="#modalidades" onClick={(e) => handleSmoothScroll(e, 'modalidades')} className="text-sm text-gray-600 hover:text-[#1FA7DA] transition-colors">
+                    Modalidades
+                  </a>
+                </li>
+                <li>
                   <a href="#blog" onClick={(e) => handleSmoothScroll(e, 'blog')} className="text-sm text-gray-600 hover:text-[#1FA7DA] transition-colors">
                     Blog
                   </a>
@@ -115,7 +123,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-[#2c3e50] mb-1">Horario de atención</p>
-                  <p>Lunes a Viernes: 9:00 - 18:00<br/>Sábados con turno previo</p>
+                  <p>Lunes a Viernes: 8:00 a 19:00 hs {/* <br/>Sábados con turno previo  */}</p>
                 </div>
                 <div>
                   <p className="font-semibold text-[#2c3e50] mb-1">Contacto</p>
@@ -148,7 +156,7 @@ const Footer: React.FC = () => {
             
             {/* Copyright & Description */}
             <div className="text-sm text-gray-500 text-center md:text-right">
-              <p>Psicóloga Clínica</p>
+              <p>Lic en Psicología</p>
               <p className="text-xs mt-1">© {new Date().getFullYear()} - Todos los derechos reservados.</p>
             </div>
           </div>
