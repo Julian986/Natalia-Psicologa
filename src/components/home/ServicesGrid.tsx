@@ -9,7 +9,8 @@ interface Service {
 }
 
 const ServicesGrid: React.FC = () => {
-  // Modos de acompañamiento (tabs desktop / acordeón mobile)
+  // Modos de acompañamiento - COMENTADO: Se movió a la columna derecha (WelcomeSection)
+  /*
   const modes = [
     {
       key: 'familiar',
@@ -66,6 +67,7 @@ const ServicesGrid: React.FC = () => {
       return next;
     });
   };
+  */
 
   const services: Service[] = [
     {
@@ -93,7 +95,8 @@ const ServicesGrid: React.FC = () => {
 
   return (
     <div className="mb-10">
-      {/* Modos de acompañamiento - Intro */}
+      {/* Modos de acompañamiento - COMENTADO: Esta sección se movió a la columna derecha (WelcomeSection) */}
+      {/* 
       <div className="mb-6">
         <h3 className="widget-title mb-2">Modos de acompañamiento</h3>
         <p className="text-gray-700 leading-relaxed">
@@ -101,7 +104,6 @@ const ServicesGrid: React.FC = () => {
         </p>
       </div>
 
-      {/* Tabs (desktop) */}
       <div className="hidden md:block mb-6">
         <div className="flex flex-wrap gap-2 border-b border-gray-200 pb-2">
           {modes.map((m, idx) => {
@@ -122,7 +124,6 @@ const ServicesGrid: React.FC = () => {
             );
           })}
         </div>
-        {/* Active panel */}
         <div className="bg-white border border-gray-200 rounded p-4 mt-4" role="tabpanel">
           <div className="flex items-start gap-3">
             {(() => {
@@ -137,7 +138,6 @@ const ServicesGrid: React.FC = () => {
         </div>
       </div>
 
-      {/* Accordion (mobile) */}
       <div className="md:hidden mb-6">
         <div className="space-y-2">
           {modes.map((m, idx) => {
@@ -176,6 +176,7 @@ const ServicesGrid: React.FC = () => {
           })}
         </div>
       </div>
+      */}
 
       <div className="grid md:grid-cols-3 gap-6">
         {services.map((service, index) => (

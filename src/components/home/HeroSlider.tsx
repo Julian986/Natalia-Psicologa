@@ -6,13 +6,13 @@ const slides = [
     id: 1,
     quote: '"Sé inteligente, ayúdate ahora"',
     author: 'Mahatma Gandhi',
-    image: 'slide-1'
+    image: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1766872779/LEMOCEUARVAQVGEHWCM6YCLC4Q_lc5evv.webp'
   },
   {
     id: 2,
     quote: '"La enfermedad mental no es un mito"',
     author: 'Nelson Mandela',
-    image: 'slide-2'
+    image: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1766872777/Nelson-Mandela-presidente-de-Sudafrica-nobel-de-Paz_v3fpur.webp'
   },
   {
     id: 3,
@@ -42,10 +42,7 @@ const HeroSlider: React.FC = () => {
   };
 
   return (
-    <div className="jumbotron relative w-full h-[280px] md:h-[350px] lg:h-[400px] bg-gradient-to-r from-[#1FA7DA] to-[#178bb8] mb-6">
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/30"></div>
-      
+    <div className="jumbotron relative w-full h-[280px] md:h-[350px] lg:h-[400px] mb-6 overflow-hidden">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -54,8 +51,18 @@ const HeroSlider: React.FC = () => {
             index === currentSlide ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1FA7DA] to-[#178bb8]"></div>
+          {/* Background image */}
+          {slide.image && typeof slide.image === 'string' && slide.image.startsWith('http') ? (
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${slide.image})` }}
+            ></div>
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1FA7DA] to-[#178bb8]"></div>
+          )}
+          
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/40"></div>
           
           {/* Content */}
           <div className="jumbotron-content px-4 md:px-6">

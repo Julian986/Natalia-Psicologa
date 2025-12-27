@@ -33,9 +33,6 @@ const Footer: React.FC = () => {
         case 'sobre-mi':
           offset = 210; // Un poco más arriba
           break;
-        case 'modalidades':
-          offset = 130; // Similar a servicios
-          break;
         case 'servicios':
           offset = 120; // Un poco más arriba
           break;
@@ -93,11 +90,6 @@ const Footer: React.FC = () => {
                 <li>
                   <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')} className="text-sm text-gray-600 hover:text-[#1FA7DA] transition-colors">
                     Acompañamiento
-                  </a>
-                </li>
-                <li>
-                  <a href="#modalidades" onClick={(e) => handleSmoothScroll(e, 'modalidades')} className="text-sm text-gray-600 hover:text-[#1FA7DA] transition-colors">
-                    Modalidades
                   </a>
                 </li>
                 <li>

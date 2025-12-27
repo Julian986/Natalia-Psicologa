@@ -145,7 +145,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           
           <li className={`menu-item menu-item-has-children ${openSubmenu === 'acompanamiento' ? 'open' : ''}`}>
             <a 
-              href="#servicios"
+              href="#sobre-mi"
               onClick={(e) => {
                 e.preventDefault();
                 toggleSubmenu('acompanamiento');
@@ -161,38 +161,38 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             {openSubmenu === 'acompanamiento' && (
               <ul className="sub-menu">
                 <li className="menu-item">
-                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
-                    <span>Terapia de Pareja</span>
+                  <a href="#sobre-mi" onClick={(e) => handleSmoothScroll(e, 'sobre-mi')}>
+                    <span>Terapia familiar</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
-                    <span>Tratamiento de Depresión</span>
+                  <a href="#sobre-mi" onClick={(e) => handleSmoothScroll(e, 'sobre-mi')}>
+                    <span>Terapia de pareja</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
-                    <span>Tratamiento Individual</span>
+                  <a href="#sobre-mi" onClick={(e) => handleSmoothScroll(e, 'sobre-mi')}>
+                    <span>Grupos de trabajo</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
-                    <span>Terapia para Niños</span>
+                  <a href="#sobre-mi" onClick={(e) => handleSmoothScroll(e, 'sobre-mi')}>
+                    <span>Acompañamiento con niños</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
-                    <span>Tratamiento de Ansiedad</span>
+                  <a href="#sobre-mi" onClick={(e) => handleSmoothScroll(e, 'sobre-mi')}>
+                    <span>Acompañamiento con adolescentes</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a href="#servicios" onClick={(e) => handleSmoothScroll(e, 'servicios')}>
-                    <span>Recuperación Post-Divorcio</span>
+                  <a href="#sobre-mi" onClick={(e) => handleSmoothScroll(e, 'sobre-mi')}>
+                    <span>Trabajo con niños y adolescentes con discapacidad</span>
                     <RiArrowRightSFill className="menu-icon" size={16} />
                   </a>
                 </li>

@@ -322,6 +322,48 @@ html {
   margin-bottom: 15px;
 }
 
+.about-us__lead {
+  margin: 0 0 12px;
+  color: #666;
+}
+
+.about-us__titles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.about-us__titlesItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.about-us__titlesItem::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #94a3b8;
+  flex: 0 0 auto;
+  opacity: 0.9;
+}
+
+.about-us__titlesItem:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
 /* Skype button */
 .skype-button {
   display: flex;

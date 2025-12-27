@@ -3,6 +3,14 @@ import React, { useState } from 'react';
 const SidebarAbout: React.FC = () => {
   const [currentImage, setCurrentImage] = useState<'nati1' | 'nati2'>('nati1');
 
+  const academicTitles: string[] = [
+    'Profesora de Psicología — Instituto Superior Juan XXIII (1997).',
+    'Licenciada en Psicología — Universidad Católica de La Plata (2001).',
+    'Especialización en Psicoanálisis con niños — Universidad de Ciencias Empresariales y Sociales, Buenos Aires (tesis en construcción).',
+    'Diplomatura en Bioética y Familia — Universidad Católica de La Plata, Buenos Aires (2023).',
+    'Maestría en Psicología Clínica y de la Salud — TECH Global University, Andorra, España (2025).',
+  ];
+
   const toggleImage = () => {
     setCurrentImage(currentImage === 'nati1' ? 'nati2' : 'nati1');
   };
@@ -30,11 +38,18 @@ const SidebarAbout: React.FC = () => {
       {/* Content */}
       <div className="p-6 text-center">
         <h5 className="about-us__name">Lic. Natalia Domecq</h5>
-        <p className="about-us__description">
-        Licenciada en Psicología con sede en Bahía Blanca. Trabajo con diversos problemas 
-          emocionales en adultos, niños y adolescentes. Completé mi formación en 
-          Psicología Clínica y cuento con un posgrado en Neurociencias Cognitivas.
-        </p>
+        <div className="about-us__description">
+          <p className="about-us__lead">
+            Licenciada en Psicología con sede en Bahía Blanca.
+          </p>
+          <ul className="about-us__titles" aria-label="Formación académica">
+            {academicTitles.map((title) => (
+              <li key={title} className="about-us__titlesItem">
+                {title}
+              </li>
+            ))}
+          </ul>
+        </div>
         <a
           href="/cv-natalia-domecq.pdf"
           download

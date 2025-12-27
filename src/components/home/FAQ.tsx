@@ -80,19 +80,34 @@ const FAQ: React.FC = () => {
         {faqs.map((faq, index) => {
           const isOpen = openItems.has(index);
           return (
-            <div key={index} className="bg-white border border-gray-200 rounded">
+            <div
+              key={index}
+              className={`bg-white border rounded transition-colors ${
+                isOpen ? 'border-[#1FA7DA]' : 'border-gray-200'
+              }`}
+            >
               <button
                 type="button"
                 onClick={() => toggleItem(index)}
-                className="w-full flex items-start justify-between gap-4 p-4 text-left hover:bg-gray-50 transition-colors cursor-pointer"
+                className={`group w-full flex items-start justify-between gap-4 p-4 text-left transition-colors cursor-pointer ${
+                  isOpen ? 'bg-gray-50' : 'hover:bg-gray-50'
+                }`}
                 aria-expanded={isOpen}
                 aria-controls={`faq-panel-${index}`}
               >
-                <span className="font-semibold text-[#2c3e50] text-base md:text-base">
+                <span
+                  className={`text-lg md:text-[18px] font-bold leading-snug tracking-tight transition-colors ${
+                    isOpen
+                      ? 'text-[#1FA7DA]'
+                      : 'text-[#2c3e50] group-hover:text-[#1FA7DA]'
+                  }`}
+                >
                   {faq.question}
                 </span>
                 <svg
-                  className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+                  className={`w-5 h-5 flex-shrink-0 transition-transform transition-colors ${
+                    isOpen ? 'rotate-180 text-[#1FA7DA]' : 'rotate-0 text-gray-400'
+                  }`}
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   aria-hidden="true"

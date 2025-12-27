@@ -10,7 +10,7 @@ const ChildrenAdolescents: React.FC = () => {
         <div className="space-y-4">
           <div className="text-gray-700 leading-relaxed">
             <p className="mb-4">
-              Trabajo con niños y adolescentes en diversos aspectos de su desarrollo emocional 
+             Trabajo con adultos, niños y adolescentes en diversos aspectos de su desarrollo emocional 
               y bienestar psicológico. Mi enfoque se centra en crear un espacio seguro donde 
               puedan expresarse libremente y desarrollar herramientas para enfrentar los 
               desafíos propios de cada etapa.
