@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Users, HeartHandshake, Briefcase, User, UserCheck, Accessibility } from 'lucide-react';
+import React from 'react';
 
 interface Service {
   title: string;
