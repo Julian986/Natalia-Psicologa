@@ -250,7 +250,7 @@ const WelcomeSection: React.FC = () => {
         <div className="page-box page-box--inline flex gap-4 items-start">
           <a href="#servicios" className="page-box__picture flex-shrink-0">
             <img 
-              src="https://res.cloudinary.com/dzoupwn0e/image/upload/v1766793096/mujer-en-proceso-de-aborto-scaled-500x383_1_qemth5.webp" 
+              src="https://res.cloudinary.com/dzoupwn0e/image/upload/v1767542688/Captura_de_pantalla_2026-01-04_124724_kmhwcl.webp" 
               alt="Trabajo con niños y adolescentes con discapacidad" 
               className="w-[100px] h-[70px] object-cover rounded"
             />
